@@ -575,21 +575,24 @@
 
         </div>
 
-        <div class="form" action="email_sending_php.php" method="post">
+        <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
+          <!--<form action="email_sending_php.php" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
+                <label for="name"></label>
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
               </div>
               <div class="form-group col-md-6">
+                <label for="email"></label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validation"></div>
               </div>
             </div>
             <div class="form-group">
+              <label for="subject"></label>
               <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validation"></div>
             </div>
@@ -599,9 +602,37 @@
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
-        </div>
+        </div>-->
+        
+        <form action="email_sending_php.php" role ="form" method="post">
+	    <div class="form-row">
+	    <div class="form-group">
+		    <label for="name">Name</label>
+		    <input type="text" class="form-control" name="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+	    </div>
 
+	    <div class="form-group">
+		    <label for="email">Email</label>
+		    <input type="text" class="form-control" name="email" data-rule="email" data-msg="Please enter a valid email">
+	    </div>
       </div>
+
+    	<div class="form-group">
+	    	<label for="subject">Subject</label>
+	    	<input type="text" class="form-control" name="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+    	</div>
+
+	    <div class="form-group">
+		    <label for="message">Message</label>
+		    <textarea name="message" id="" class="form-control" data-rule="required" data-msg="Please write something for us" cols="30" rows="10"></textarea>
+    	</div>
+
+	    <div><input type="submit" value="Send email"></div>
+
+        </form>
+    
+    </div>
+    </div>
     </section><!-- #contact --> 
 
   </main>
