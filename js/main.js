@@ -168,3 +168,26 @@ jQuery(document).ready(function( $ ) {
   });
 
 });
+
+///
+var counter = 0;
+function setBckImage(){
+    if(counter<3){
+        counter++;
+    } else {
+        counter=1;
+    }
+
+    switch (counter){
+        case 1:
+            $('#bg-atas').css({"background-image" : "url('img/bg-1.jpg')"});
+            break;
+        case 2:
+            $('#bg-atas').css({"background-image" : "url('img/bg-2.jpg')"});
+            break;
+        case 3:
+            $('#bg-atas').css({"background-image" : "url('img/bg-3.jpg')"});
+            break;
+    }
+}
+setInterval(setBckImage, 3000);

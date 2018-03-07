@@ -4,6 +4,7 @@ $email=$_POST['email'];
 $subject=$_POST['subject'];
 $message=$_POST['message'];
 
+
 $to='dikandapamerang@gmail.com';
 
 $message="From:$name <br />".$message;
@@ -17,6 +18,6 @@ $headers .= "Cc: ".$email. "\r\n"; //untuk cc lebih dari satu tinggal kasih koma
 @mail($to,$subject,$message,$headers);
 if(@mail)
 {
-echo "Email sent successfully !!";	
+   echo "Email sent successfully !!";	
 }
 ?>
