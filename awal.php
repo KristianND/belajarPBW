@@ -39,7 +39,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
 	<section id="contact" class="section-bg wow fadeInUp" style="border: 2px solid red; border-radius: 12px; margin: 180px; font-family:courier;">
 		<div id="form">
 		
-		<br>
 		<h3 class="text-center"><strong>Admin Login Page</strong></h3>
 		<h5 class="text-center">Please Enter Username and Password</h5>
 		<div class="container">
