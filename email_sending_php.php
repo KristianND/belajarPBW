@@ -18,7 +18,10 @@ $headers .= "Cc: ".$email. "\r\n"; //untuk cc lebih dari satu tinggal kasih koma
 @mail($to,$subject,$message,$headers);
 if(@mail)
 {
-	echo : sukses;
+	echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Email Sucsessful');
+    window.location.href='http://kindika-ndapamerang.000webhostapp.com/';
+    </script>");
 }
 
 
