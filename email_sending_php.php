@@ -27,9 +27,9 @@ if(@mail)
 
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "database";
+$username = "id4894883_root";
+$password = "kristian";
+$dbname = "id4894883_database";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -38,7 +38,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO data (name, email, subject, message)
+$sql = "INSERT INTO users (name, email, subject, message)
 VALUES ('".$name."', '".$email."', '".$subject."', '".$message."')";
 
 if ($conn->query($sql) === TRUE) {
