@@ -1,0 +1,5 @@
+Database Name : crud_db
+
+$config['base_url'] = 'http://localhost:8080/CITI/';
+
+Localhost Port 8080
