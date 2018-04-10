@@ -11,3 +11,5 @@ CREATE TABLE `users` (
   `message` varchar(100),  
   PRIMARY KEY  (`id`)
 );
+
+
