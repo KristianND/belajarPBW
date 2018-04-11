@@ -4,6 +4,9 @@ include_once("config.php");
 
 // Fetch all users data from database
 $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
+
+// Fetch all users data from database
+$statistik = mysqli_query($mysqli, "SELECT * FROM jumlahpendaftar ORDER BY id DESC");
 ?>
 
 <html>
@@ -38,50 +41,28 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
     }
     ?>
     </table>
-        <p><a href="exportexcel.php"><button>Export Data ke Excel</button></a></p>
+
+        <p><a href="exportexcel.php"><button>Export Data ke Excel</button></a></p><br>
+
+    <h3 style="text-align: center;">"Jumlah Pendaftar di Fakultas Teknologi Informasi dan Komunikasi Periode 2018"</h3>
+    <table width='80%' border=1 class="table table-bordered">
+        <tr>
+            <th>Nama Departemen</th> <th>Tahun 2014</th> <th>Tahun 2015</th> <th>Tahun 2016</th> <th>Tahun 2017</th> <th>Tahun 2018</th>
+        </tr>
+        <?php
+        while($user_data = mysqli_fetch_array($statistik)) {
+            echo "<tr>";
+            echo "<td>".$user_data['namaDepartemen']."</td>";
+            echo "<td>".$user_data['tahun2014']."</td>";
+            echo "<td>".$user_data['tahun2015']."</td>";
+            echo "<td>".$user_data['tahun2016']."</td>";
+            echo "<td>".$user_data['tahun2017']."</td>";
+            echo "<td>".$user_data['tahun2018']."</td>";
+            echo "<td><a href='editstatistik.php?id=$user_data[id]'>Edit</a></td></tr>";
+        }
+        ?>
+    </table>
 	</div>
-
-	<section id="contact" class="section-bg wow fadeInUp" style="border: 2px solid red; border-radius: 12px; margin: 100px; font-family:courier;">
-		<div id="form">
-
-		<br>
-		<h3 class="text-center"><strong>Admin Login Page</strong></h3>
-		<h5 class="text-center">Please Enter Username and Password</h5>
-		<div class="container">
-
-
-	    <div class="form-row">
-			<br><br><br>
-			<div class="form-group col-md-6">
-				<input type="text" class="form-control" name="name" data-rule="minlen:4" id="username" placeholder="Username">
-			</div>
-
-			<div class="form-group col-md-6">
-				<input type="text" class="form-control" name="email" data-rule="email" id="password" placeholder="Password">
-			</div>
-		</div>
-		<div class="text-center"><button onClick="admin()">Log In</button></div>
-		<br><br>
-		<p><em>*If you are not admin, please consider to leave this page immediately</em></p>
-		<a href="http://kindika-ndapamerang.000webhostapp.com/"><em>Go back to Information Technology Webpage</em></a>
-		</div>
-		</div>
-    </section>
-
-	<script>
-		$('#mtable').hide();
-
-		function admin(){
-			if($('#username').val()==='admin'&& $('#password').val()==='admin'){
-
-			$('#mtable').show();
-			$('#form').hide();
-			}
-			else{
-				window.alert('Username Or Password Incorrect');
-			}
-		}
-	</script>
 </body>
 
 </html>

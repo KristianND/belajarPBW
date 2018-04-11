@@ -1,23 +1,13 @@
 <?php
-$db_host = "localhost";
-$db_user = "root";
-$db_pass = "";
-$db_name = "crud_db";
-
-$koneksi = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-if(mysqli_connect_errno()){
-    echo 'Gagal melakukan koneksi ke Database : '.mysqli_connect_error();
-}
-?>
-
-<?php
 
 // Fungsi header dengan mengirimkan raw data excel
 header("Content-type: application/vnd-ms-excel");
 
 // Mendefinisikan nama file ekspor "hasil-export.xls"
 header("Content-Disposition: attachment; filename=Email_Pengunjung_Web.xls");
+
+// Tambahkan table
+include 'awal.php';
 
 // memanggil query dari database
 $sqlshow = mysqli_query($koneksi, "SELECT * FROM users");
